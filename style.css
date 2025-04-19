@@ -1,0 +1,110 @@
+:root {
+    --font-stack-typewriter: "typewriter", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-stack-handwriting: "handwriting", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@font-face {
+    font-family: "handwriting";
+    src: url('./assets/fonts/journal-webfont.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "typewriter";
+    src: url('./assets/fonts/momt___-webfont.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font: 1.3rem sans-serif;
+    margin: 0;
+    background: #121212 url('./assets/img/bg.jpg');
+    background-position: center;
+    
+}
+
+form {
+    position: relative;
+    width: 740px;
+    height: 498px;
+    margin: 0 auto;
+    padding: 1em;
+    box-sizing: border-box;
+    background: #fff url('./assets/img/bg-form.jpg');
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 10em 1em 1em 1em;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+}
+
+h1 {
+    font: 1em var(--font-stack-typewriter);
+    align-self: end;
+}
+
+#message {
+    grid-row: 1/5;
+}
+
+#from, #reply {
+    display: flex;
+}
+
+label {
+    font: 0.8em var(--font-stack-typewriter);
+}
+
+input,
+textarea {
+  font: 1.4em/1.5em var(--font-stack-handwriting);
+  border: none;
+  padding: 0 10px;
+  margin: 0;
+  width: 80%;
+  background: none;
+  outline: none;
+}
+
+textarea {
+    display: block;
+  
+    padding: 10px;
+    margin: 10px 0 0 -10px;
+    width: 100%;
+    height: 90%;
+  
+    border-right: 1px solid;
+  
+    /* resize  : none; */
+    overflow: auto;
+  }
+  
+button[type="submit"] {
+    background: none;
+    border: 2px solid #323232;
+    outline: none;
+    padding: 0.4rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transform: rotate(-1deg);
+
+    &::after {
+        content: ' >>>'
+    }
+
+    &:hover, &:focus {
+        background-color: #000;
+        color: #fff;
+    }
+
+}
+
